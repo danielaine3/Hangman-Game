@@ -1,0 +1,80 @@
+body {
+	background-color:white;
+}
+
+.jumbotron {
+	width:100%;
+	height:300px;
+	background-color: white;
+	background-image: url("../images/australia.png");
+	background-repeat:no-repeat;
+	background-position:center;
+
+}
+
+.header{
+	font-family: roberto-condensed;
+	font-size: 120px;
+	text-align: center;
+	color:white;
+	text-shadow: -2px -2px 0 #E83223,  
+	 2px -2px 0 #E83223,
+    -2px 2px 0 #E83223,
+     2px 2px 0 #E83223;
+     vertical-align: text-top;
+    
+
+}
+
+.subheader {
+	font-family: yellowtail;
+	font-size:60px;
+	text-align: center;
+	color:#E83223;
+	transform:rotate(-7deg);
+}
+
+p {
+	font-family:roberto-condensed;
+	font-size:22px;
+	text-align: center;
+	color:#140279;
+
+}
+
+.rotatingimage {
+	height:400px;
+	width:100%;
+	object-position:center;
+
+}
+
+.image-container {
+	border-right: dotted 3px #E83223;
+
+}
+
+.container {
+	position:center;
+
+}
+
+footer {
+	font-family: roberto-condensed;
+	font-size: 22px;
+	width:auto;
+	background-color: #140279;
+	text-align: center;
+	color:white;
+	height:60px;
+	margin-top:30px;
+
+}
+
+.row {
+
+	border-style: dotted;
+	border-width: 3px;
+	border-color: #E83223;
+	padding:5px;
+}
