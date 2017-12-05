@@ -1,5 +1,5 @@
 //Creates an array that lists all the word options for the computer to choose from. 
-var wordList = ["australia", "new south wales","queensland","northern territory","south australia","western australia","australian capital territory","victoria","tasmania","uluru","ayers rock","platypus","koala","echidna","wombat","dingo","great barrier reef","kata tjuna","the olgas","fraser island","sydney","perth","sydney opera house","sydney harbour bridge","canberra","blue mountains","tasmanian devil","kangaroo"
+var wordList = ["australia", "queensland","victoria","tasmania","uluru","platypus","koala","echidna","wombat","dingo","sydney","perth","canberra","kangaroo","manly","freycinet","hobart","quoka","launceston","aussie","outback","boomerang"
 				];
 
 //Solution will be held here
@@ -55,7 +55,7 @@ function startGame() {
 	console.log(blanksAndSuccesses);
 
 	//Reprinte the Guesses Remaining to 10
-	document.getElementById("guessesLeft").innerHTML = guessesLeft;
+	document.getElementById("guessesLeft").innerHTML = numGuesses;
 
 	//Print the blanks at the beginning of each round in the HTML
 	document.getElementById("wordblanks").innerHTML= blanksAndSuccesses.join("");
@@ -68,12 +68,11 @@ function startGame() {
 //checking letters for matches
 function checkLetters(letter){
 
-
 	var letterInWord = false
 
 	for (var i = 0; i < numBlanks; i++){
 
-		if(chosenWord[i] === letter){
+		if(chosenWord[i] == letter){
 			letterInWord = true;
 		}
 	}
@@ -95,13 +94,21 @@ function checkLetters(letter){
 		//log to test
 		console.log(blanksAndSuccesses);
 		
-	}
-	//If no match
-	else{
-		//Add the letter to list of wrong guesses
-		wrongGuesses.push(letter);
-		//subtract 1 from remaining guesses
-		numGuesses--;
+
+		//If no match
+			else {
+				//loop through the previous wrong guesses
+				for (var i = 0; i < wrongGuesses; i++)
+
+				//If letter is not in wrongGuesses array
+				if (letter[i] !== wrongGuesses){
+
+					//Add the letter to list of wrong guesses
+					wrongGuesses.push(letter);
+
+					//subtract 1 from remaining guesses
+					numGuesses--;
+		}
 	}
 };
 
@@ -115,10 +122,10 @@ function roundComplete(){
 	//Update the HTML to reflect new nunmber of guesses and correct guesses. 
 	document.getElementById("guessesLeft").innerHTML= numGuesses;
 
-	//This will pring the arra of guesses and blanks onto the page
+	//This will print the array of guesses and blanks onto the page
 	document.getElementById("wordblanks").innerHTML= blanksAndSuccesses.join(" ");
 
-	//This will pring the wrong guesses onto the page
+	//This will print the wrong guesses onto the page
 	document.getElementById("wrongGuesses").innerHTML= wrongGuesses.join(" ");
 
 	//If we have gotten all the letters to match the solution
@@ -136,6 +143,7 @@ function roundComplete(){
 
 	//If user runs out of guesses
 	else if (numGuesses == 0) {
+
 		//Alert user they lost.
 		alert ("You lost.")
 
@@ -149,14 +157,28 @@ function roundComplete(){
 startGame();
 
 //Initiates by capturing keystrokes
-document.onkeyup= function(event){
+document.onkeyup = function(event) {
 
 	//Converts all keystrokes to lowercase
-	letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+	var letterGuessed = event.key.toLowerCase();
 
-	//Runs code to check for correctness
-	checkLetters(letterGuessed);
-	//Runs cod after each round is done
-	roundComplete();
+	if(letterGuessed === "a" || letterGuessed === "b" || letterGuessed === "c" || 
+		letterGuessed === "d" || letterGuessed === "e" || letterGuessed === "f" || 
+		letterGuessed === "g" || letterGuessed === "h" || letterGuessed === "i" ||
+		letterGuessed === "j" || letterGuessed === "k" || letterGuessed === "l" || 
+		letterGuessed === "m" || letterGuessed === "n" || letterGuessed === "o" || 
+		letterGuessed === "p" || letterGuessed === "q" || letterGuessed === "r" || 
+		letterGuessed === "s" || letterGuessed === "t" || letterGuessed === "u" ||
+		letterGuessed === "v" || letterGuessed === "w" || letterGuessed === "x" || 
+		letterGuessed === "y" || letterGuessed === "z") {
 
+		//Runs code to check for correctness
+		checkLetters(letterGuessed);
+		//Runs cod after each round is done
+		roundComplete();
+
+	} else{
+		alert ("Invalid letter!");
+
+	}
 };
