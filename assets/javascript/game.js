@@ -95,20 +95,22 @@ function checkLetters(letter){
 		console.log(blanksAndSuccesses);
 		
 
-		//If no match
-			else {
+			//If no match
+			}else {
 				//loop through the previous wrong guesses
-				for (var i = 0; i < wrongGuesses; i++)
+				for (var i = 0; i < wrongGuesses; i++){
 
-				//If letter is not in wrongGuesses array
-				if (letter[i] !== wrongGuesses){
+					//If letter is not in wrongGuesses array
+					if (letter[i] !== wrongGuesses){
 
-					//Add the letter to list of wrong guesses
-					wrongGuesses.push(letter);
+						//Add the letter to list of wrong guesses
+						wrongGuesses.push(letter);
 
-					//subtract 1 from remaining guesses
-					numGuesses--;
-		}
+						//subtract 1 from remaining guesses
+						numGuesses--;
+					}
+				}
+			}
 	}
 };
 
