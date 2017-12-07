@@ -22,7 +22,7 @@ body {
     -2px 2px 0 #E83223,
      2px 2px 0 #E83223;
      vertical-align: text-top;
-     margin-top:-40px;
+     margin-top:-25px;
      padding-top: 0px;
      padding-bottom: 0px
     
@@ -35,6 +35,7 @@ body {
 	text-align: center;
 	color:#E83223;
 	transform:rotate(-7deg);
+	margin-top: -17px;
 }
 
 p {
