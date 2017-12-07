@@ -44,11 +44,15 @@ var numBlanks = 0;
 var blanksAndLetters = [];
 
 //This will hold the wrong guesses
-var wrongGuesses = [];
+var wrongGuess = [];
 
 //Create variables for counters
 var winCounter = 0;
-var numGuesses = 10;
+var numGuesses = 8;
+
+//Sounds
+var boo = new Audio ("assets/sound/womp.mp3")
+var yay = new Audio ("assets/sound/ding.mp3")
 
 //FUNCTIONS
 
@@ -56,7 +60,7 @@ var numGuesses = 10;
 function startGame() {
 
 	//Resets guess remaining at beginning of game
-	numGuesses= 10;
+	numGuesses= 8;
 
 	//Solution is chosen
 	chosenWord = wordList[Math.floor(Math.random() * wordList.length)];
@@ -73,8 +77,8 @@ function startGame() {
 	//reset guess and success array at each round
 	blanksAndLetters = [];
 
-	//reset wrong guesses from previous round
-	wrongGuesses = [];
+	//reset wrongGuess from previous round
+	wrongGuess = [];
 
 	for (var i = 0; i < numBlanks; i++){
 		blanksAndLetters.push("_ ");
@@ -90,7 +94,7 @@ function startGame() {
 	document.getElementById("wordblanks").innerHTML= blanksAndLetters.join("");
 
 	//Clear sthe wrong guesses from previous round
-	document.getElementById("wrongGuesses").innerHTML= wrongGuesses.join("");
+	document.getElementById("wrongGuess").innerHTML= wrongGuess.join("");
 
 };
 
@@ -127,11 +131,11 @@ function checkLetters(letter){
 	//If no match
 	}else {
 
-		//If letter is not in wrongGuesses array
-		if (wrongGuesses.indexOf(letter) < 0) {
+		//If letter is not in wrongGuess array
+		if (wrongGuess.indexOf(letter) < 0) {
 
 			//Add the letter to list of wrong guesses
-			wrongGuesses.push(letter);
+			wrongGuess.push(letter);
 
 			//subtract 1 from remaining guesses
 			numGuesses--;
@@ -154,10 +158,13 @@ function roundComplete(){
 	document.getElementById("wordblanks").innerHTML= blanksAndLetters.join(" ");
 
 	//This will print the wrong guesses onto the page
-	document.getElementById("wrongGuesses").innerHTML= wrongGuesses.join(" ");
+	document.getElementById("wrongGuess").innerHTML= wrongGuess.join(" ");
 
 	//If we have gotten all the letters to match the solution
 	if (lettersInChosenWord.toString() == blanksAndLetters.toString()){
+
+		//play sound
+		yay.play();
 
 		//Add to win count
 		winCounter++;
@@ -183,6 +190,9 @@ function roundComplete(){
 
 	//If user runs out of guesses
 	else if (numGuesses == 0) {
+
+		//play sound
+		boo.play();
 
 		//Alert user they lost.
 		alert ("You lost.")
