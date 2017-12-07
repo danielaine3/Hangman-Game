@@ -1,6 +1,35 @@
 //Creates an array that lists all the word options for the computer to choose from. 
-var wordList = ["australia", "queensland","victoria","tasmania","uluru","platypus","koala","echidna","wombat","dingo","sydney","perth","canberra","kangaroo","manly","freycinet","hobart","quoka","launceston","aussie","outback","boomerang"
-				];
+var wordList = ["australia", "kangaroo", "uluru", "echidna", "wombat",
+"whitehaven", "koala", "quokka", "dingo", "sydney", "perth", "tasmania", "platypus",
+"freycinet", "outback", "boomerang", "wallaby", "cassowary", "canberra"];
+
+//Creates an array that lists all the picture options for the computer to choose from.
+var picList= ["assets/images/australiamap.jpg", "assets/images/kangaroos.jpg",
+"assets/images/Uluru.jpg", "assets/images/echidna.jpg", "assets/images/wombat.jpg",
+"assets/images/whitehavenbeach.jpg", "assets/images/koala.jpg", "assets/images/quokka.jpg",
+"assets/images/dingo.jpg", "assets/images/sydney.jpg", "assets/images/perth.jpg",
+"assets/images/tasmania.jpg", "assets/images/platypus.jpg", "assets/images/freycinet.jpg",
+"assets/images/outback.jpg", "assets/images/boomerang.jpg", "assets/images/wallaby.jpg",
+"assets/images/cassowary.jpg", "assets/images/canberra.jpg"];
+
+var factList= ["Australia was originally founded as a penal colony.",
+"Kangaroos can reach to speed of over 65 Kilometers per hour.",
+"Uluru, also known as Ayers Rock, stands 348 meters (1141.73 feet) above ground.",
+"Echidnas are one of only two egg laying mammals on Earth.",
+"Wombats have cube-shaped poop.", "Whitehaven Beach stretches over 7km and has pure white silica sand.",
+"Koalas will eat up to 2.5lbs of food a day and sleep for up to 20 hours a day.",
+"Quokkas are only found on Rottnest Island just off Western Australia's coast.",
+"A dingo is type of feral dog that originates from Southeast Asia and can now be foudn in parts of Australia.",
+"Sydney is home to well over 100 beaches.", "Perth is the capital of Western Australia.",
+"Tasmania is home to the Overland Track, Australia's most famous hiking trail.", 
+"The platypus is such an unlikely animal that when scientists first discovered it they thought they were the victims of a hoax.",
+"Freycinet National Park is home to Wineglass Bay which is consistently listed as one of the top 10 beaches in the World.",
+"The Outback has an average maximum temperature in January of 104F", 
+"A boomerang was originally used as weapon by Indigenous Australians.", 
+"A wallaby is a member of the kanagroo family but they are generally much smaller than kangeroos.", 
+"The cassowary is extremely dangerous if provoked and can literally kick a person to death.", 
+"Canberra is the capital of Australia."];
+
 
 //Solution will be held here
 var chosenWord = "";
@@ -12,7 +41,7 @@ var lettersInChosenWord = [];
 var numBlanks = 0;
 
 //This will hold a mix of blank and solved letters (ex. n, _ _, n, _)
-var blanksAndSuccesses = [];
+var blanksAndLetters = [];
 
 //This will hold the wrong guesses
 var wrongGuesses = [];
@@ -42,23 +71,23 @@ function startGame() {
 	console.log(chosenWord);
 
 	//reset guess and success array at each round
-	blanksAndSuccesses = [];
+	blanksAndLetters = [];
 
 	//reset wrong guesses from previous round
 	wrongGuesses = [];
 
 	for (var i = 0; i < numBlanks; i++){
-		blanksAndSuccesses.push("_ ");
+		blanksAndLetters.push("_ ");
 	}
 
 	//Print the initial blanks to console.
-	console.log(blanksAndSuccesses);
+	console.log(blanksAndLetters);
 
 	//Reprinte the Guesses Remaining to 10
 	document.getElementById("guessesLeft").innerHTML = numGuesses;
 
 	//Print the blanks at the beginning of each round in the HTML
-	document.getElementById("wordblanks").innerHTML= blanksAndSuccesses.join("");
+	document.getElementById("wordblanks").innerHTML= blanksAndLetters.join("");
 
 	//Clear sthe wrong guesses from previous round
 	document.getElementById("wrongGuesses").innerHTML= wrongGuesses.join("");
@@ -83,16 +112,16 @@ function checkLetters(letter){
 		//loop through the word
 		for (var i = 0; i < numBlanks; i++){
 
-			//Populate blanksAndSuccesses with every instance of the letter.
+			//Populate blanksAndLetters with every instance of the letter.
 			if (chosenWord[i] == letter){
 
 				//set specific space equal to letter when there is a match
-				blanksAndSuccesses[i] = letter;
+				blanksAndLetters[i] = letter;
 			}
 		}
 
 		//log to test
-		console.log(blanksAndSuccesses);
+		console.log(blanksAndLetters);
 		
 
 	//If no match
@@ -122,20 +151,32 @@ function roundComplete(){
 	document.getElementById("guessesLeft").innerHTML= numGuesses;
 
 	//This will print the array of guesses and blanks onto the page
-	document.getElementById("wordblanks").innerHTML= blanksAndSuccesses.join(" ");
+	document.getElementById("wordblanks").innerHTML= blanksAndLetters.join(" ");
 
 	//This will print the wrong guesses onto the page
 	document.getElementById("wrongGuesses").innerHTML= wrongGuesses.join(" ");
 
 	//If we have gotten all the letters to match the solution
-	if (lettersInChosenWord.toString() == blanksAndSuccesses.toString()){
+	if (lettersInChosenWord.toString() == blanksAndLetters.toString()){
+
 		//Add to win count
 		winCounter++;
-		//Alert user they won!
-		alert("You win!");
+
+		//Change picture
+		//get index of chosenWord
+		var wordIndex = wordList.indexOf(chosenWord);
+		console.log(wordIndex);
+		
+		//set image src to index of picture corresponding to the chosen word
+		document.getElementById("rotatingimage").src= picList[wordIndex];
+
+		//Show fun fact about chosenWord
+
+		document.getElementById("facts").innerHTML= factList[wordIndex];
 
 		//update win count in HTML
 		document.getElementById("winCounter").innerHTML=winCounter;
+
 		//Restart the game
 		startGame();
 	}
@@ -173,6 +214,7 @@ document.onkeyup = function(event) {
 
 		//Runs code to check for correctness
 		checkLetters(letterGuessed);
+
 		//Runs cod after each round is done
 		roundComplete();
 
