@@ -1,4 +1,102 @@
 //Creates an array that lists all the word options for the computer to choose from. 
+// var wordList = [
+	
+// 	{ "word": 'australia',
+// 		"picture": 'assets/images/australiamap.jpg',
+// 		"fact": 'Australia was originally founded as a penal colony.'
+// 	},
+
+// 	{ "word": 'kangaroo',
+// 		"picture": 'assets/images/kangaroos.jpg',
+// 		"fact": 'Kangaroos can reach speeds of over 65 Kilometers per hour.'
+// 	},
+
+// 	{ "word": 'uluru',
+// 		"picture": 'assets/images/Uluru.jpg',
+// 		"fact": 'Uluru, also known as Ayers Rock, stands 348 meters (1141.73 feet) above ground.'
+// 	},
+
+// 	{ "word": 'echidna',
+// 		"picture":'assets/images/echidna.jpg',
+// 		"fact": 'Echidnas are one of only two egg laying mammals on Earth.'
+// 	},
+
+// 	{ "word": 'wombat',
+// 		"picture": 'assets/images/wombat.jpg',
+// 		"fact": 'Wombats have cube-shaped poop.'
+// 	},
+
+// 	{ "word": 'whitehaven',
+// 		"picture": 'assets/images/whitehavenbeach.jpg',
+// 		"fact": 'Whitehaven Beach stretches over 7km and has pure white silica sand.'
+// 	},
+
+// 	{ "word": 'koala',
+// 		"picture": 'assets/images/koala.jpg',
+// 		"fact": 'Koalas will eat up to 2.5lbs of food a day and sleep for up to 20 hours a day.'
+// 	},
+
+// 	{ "word": 'quokka',
+// 		"picture": 'assets/images/quokka.jpg',
+// 		"fact": "Quokkas are only found on Rottnest Island just off Western Australia's coast."
+// 	},
+
+// 	{ "word": 'dingo',
+// 		"picture": 'assets/images/dingo.jpg',
+// 		"fact": 'A dingo is type of feral dog that originates from Southeast Asia and can now be found in parts of Australia.'
+// 	},
+
+// 	{ "word": 'sydney',
+// 		"picture": 'assets/images/sydney.jpg',
+// 		"fact": 'Sydney is home to well over 100 beaches.'
+// 	},
+
+// 	{ "word": 'perth',
+// 		"picture": 'assets/images/perth.jpg',
+// 		"fact": 'Perth is the capital of Western Australia.'
+// 	},
+
+// 	{ "word": 'tasmania',
+// 		"picture": 'assets/images/tasmania.jpg',
+// 		"fact": "Tasmania is home to the Overland Track, Australia's most famous hiking trail."
+// 	},
+
+// 	{ "word": 'platypus',
+// 		"picture": 'assets/images/platypus.jpg',
+// 		"fact": 'The platypus is such an unlikely animal that when scientists first discovered it they thought they were the victims of a hoax.'
+// 	},
+
+// 	{ "word": 'freycinet',
+// 		"picture": 'assets/images/freycinet.jpg',
+// 		"fact": 'Freycinet National Park is home to Wineglass Bay which is consistently listed as one of the top 10 beaches in the World.'
+// 	},
+
+// 	{ "word": 'outback',
+// 		"picture": 'assets/images/outback.jpg',
+// 		"fact": 'The Outback has an average maximum temperature in January of 104F'
+// 	},
+
+// 	{ "word": 'boomerang',
+// 		"picture": 'assets/images/boomerang.jpg',
+// 		"fact": 'A boomerang was originally used as weapon by Indigenous Australians.'
+// 	},
+
+// 	{ "word": 'wallaby',
+// 		"picture": 'assets/images/wallaby.jpg',
+// 		"fact": 'A wallaby is a member of the kanagroo family but they are generally much smaller than kangeroos.'
+// 	},
+
+// 	{ "word": 'cassowary', 
+// 		"picture": 'assets/images/cassowary.jpg',
+// 		"fact": 'he cassowary is extremely dangerous if provoked and can literally kick a person to death.'
+// 	},
+
+// 	{ "word": 'canberra',
+// 		"picture": 'assets/images/canberra.jpg',
+// 		"fact": 'Canberra is the capital of Australia.'
+// 	},
+// ];
+
 var wordList = ["australia", "kangaroo", "uluru", "echidna", "wombat",
 "whitehaven", "koala", "quokka", "dingo", "sydney", "perth", "tasmania", "platypus",
 "freycinet", "outback", "boomerang", "wallaby", "cassowary", "canberra"];
@@ -13,7 +111,7 @@ var picList= ["assets/images/australiamap.jpg", "assets/images/kangaroos.jpg",
 "assets/images/cassowary.jpg", "assets/images/canberra.jpg"];
 
 var factList= ["Australia was originally founded as a penal colony.",
-"Kangaroos can reach to speed of over 65 Kilometers per hour.",
+"Kangaroos can reach speeds of over 65 Kilometers per hour.",
 "Uluru, also known as Ayers Rock, stands 348 meters (1141.73 feet) above ground.",
 "Echidnas are one of only two egg laying mammals on Earth.",
 "Wombats have cube-shaped poop.", "Whitehaven Beach stretches over 7km and has pure white silica sand.",
@@ -207,20 +305,26 @@ function roundComplete(){
 startGame();
 
 //Initiates by capturing keystrokes
-document.onkeyup = function(event) {
+document.onkeyup = function(event) { 
 
 	//Converts all keystrokes to lowercase
-	var letterGuessed = event.key.toLowerCase();
+	var letterGuessed = event.keyCode >= 65 && event.keyCode <= 90;
 
-	if(letterGuessed === "a" || letterGuessed === "b" || letterGuessed === "c" || 
-		letterGuessed === "d" || letterGuessed === "e" || letterGuessed === "f" || 
-		letterGuessed === "g" || letterGuessed === "h" || letterGuessed === "i" ||
-		letterGuessed === "j" || letterGuessed === "k" || letterGuessed === "l" || 
-		letterGuessed === "m" || letterGuessed === "n" || letterGuessed === "o" || 
-		letterGuessed === "p" || letterGuessed === "q" || letterGuessed === "r" || 
-		letterGuessed === "s" || letterGuessed === "t" || letterGuessed === "u" ||
-		letterGuessed === "v" || letterGuessed === "w" || letterGuessed === "x" || 
-		letterGuessed === "y" || letterGuessed === "z") {
+	//=== is where the issue is happening, only runs else part
+	if(letterGuessed = String.fromCharCode(event.keyCode).toLowerCase()
+
+		// "a" || letterGuessed === "b" || letterGuessed === "c" || 
+		// letterGuessed === "d" || letterGuessed === "e" || letterGuessed === "f" || 
+		// letterGuessed === "g" || letterGuessed === "h" || letterGuessed === "i" ||
+		// letterGuessed === "j" || letterGuessed === "k" || letterGuessed === "l" || 
+		// letterGuessed === "m" || letterGuessed === "n" || letterGuessed === "o" || 
+		// letterGuessed === "p" || letterGuessed === "q" || letterGuessed === "r" || 
+		// letterGuessed === "s" || letterGuessed === "t" || letterGuessed === "u" ||
+		// letterGuessed === "v" || letterGuessed === "w" || letterGuessed === "x" || 
+		// letterGuessed === "y" || letterGuessed === "z"
+		) {
+
+		console.log(event.keyCode);
 
 		//Runs code to check for correctness
 		checkLetters(letterGuessed);
@@ -229,6 +333,7 @@ document.onkeyup = function(event) {
 		roundComplete();
 
 	} else{
+		console.log(event.keyCode);
 		alert ("Invalid letter!");
 
 	}
