@@ -308,10 +308,15 @@ startGame();
 document.onkeyup = function(event) { 
 
 	//Converts all keystrokes to lowercase
-	var letterGuessed = event.keyCode >= 65 && event.keyCode <= 90;
+	var charCode = event.which;
+	var letterGuessed = String.fromCharCode(charCode).toLowerCase();
+
+	// >= 65 && event.charCode <= 90;
 
 	//=== is where the issue is happening, only runs else part
-	if(letterGuessed = String.fromCharCode(event.keyCode).toLowerCase()
+	if(/[a-z]/i.test(letterGuessed)
+
+		// String.fromCharCode(event.keyCode).toLowerCase() 
 
 		// "a" || letterGuessed === "b" || letterGuessed === "c" || 
 		// letterGuessed === "d" || letterGuessed === "e" || letterGuessed === "f" || 
