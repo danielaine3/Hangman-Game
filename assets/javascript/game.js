@@ -1,132 +1,132 @@
 //Creates an array that lists all the word options for the computer to choose from. 
-// var wordList = [
+var myList = [
 	
-// 	{ "word": 'australia',
-// 		"picture": 'assets/images/australiamap.jpg',
-// 		"fact": 'Australia was originally founded as a penal colony.'
-// 	},
+	{ "word": 'australia',
+		"picture": 'assets/images/australiamap.jpg',
+		"fact": 'Australia was originally founded as a penal colony.'
+	},
 
-// 	{ "word": 'kangaroo',
-// 		"picture": 'assets/images/kangaroos.jpg',
-// 		"fact": 'Kangaroos can reach speeds of over 65 Kilometers per hour.'
-// 	},
+	{ "word": 'kangaroo',
+		"picture": 'assets/images/kangaroos.jpg',
+		"fact": 'Kangaroos can reach speeds of over 65 Kilometers per hour.'
+	},
 
-// 	{ "word": 'uluru',
-// 		"picture": 'assets/images/Uluru.jpg',
-// 		"fact": 'Uluru, also known as Ayers Rock, stands 348 meters (1141.73 feet) above ground.'
-// 	},
+	{ "word": 'uluru',
+		"picture": 'assets/images/Uluru.jpg',
+		"fact": 'Uluru, also known as Ayers Rock, stands 348 meters (1141.73 feet) above ground.'
+	},
 
-// 	{ "word": 'echidna',
-// 		"picture":'assets/images/echidna.jpg',
-// 		"fact": 'Echidnas are one of only two egg laying mammals on Earth.'
-// 	},
+	{ "word": 'echidna',
+		"picture":'assets/images/echidna.jpg',
+		"fact": 'Echidnas are one of only two egg laying mammals on Earth.'
+	},
 
-// 	{ "word": 'wombat',
-// 		"picture": 'assets/images/wombat.jpg',
-// 		"fact": 'Wombats have cube-shaped poop.'
-// 	},
+	{ "word": 'wombat',
+		"picture": 'assets/images/wombat.jpg',
+		"fact": 'Wombats have cube-shaped poop.'
+	},
 
-// 	{ "word": 'whitehaven',
-// 		"picture": 'assets/images/whitehavenbeach.jpg',
-// 		"fact": 'Whitehaven Beach stretches over 7km and has pure white silica sand.'
-// 	},
+	{ "word": 'whitehaven',
+		"picture": 'assets/images/whitehavenbeach.jpg',
+		"fact": 'Whitehaven Beach stretches over 7km and has pure white silica sand.'
+	},
 
-// 	{ "word": 'koala',
-// 		"picture": 'assets/images/koala.jpg',
-// 		"fact": 'Koalas will eat up to 2.5lbs of food a day and sleep for up to 20 hours a day.'
-// 	},
+	{ "word": 'koala',
+		"picture": 'assets/images/koala.jpg',
+		"fact": 'Koalas will eat up to 2.5lbs of food a day and sleep for up to 20 hours a day.'
+	},
 
-// 	{ "word": 'quokka',
-// 		"picture": 'assets/images/quokka.jpg',
-// 		"fact": "Quokkas are only found on Rottnest Island just off Western Australia's coast."
-// 	},
+	{ "word": 'quokka',
+		"picture": 'assets/images/quokka.jpg',
+		"fact": "Quokkas are only found on Rottnest Island just off Western Australia's coast."
+	},
 
-// 	{ "word": 'dingo',
-// 		"picture": 'assets/images/dingo.jpg',
-// 		"fact": 'A dingo is type of feral dog that originates from Southeast Asia and can now be found in parts of Australia.'
-// 	},
+	{ "word": 'dingo',
+		"picture": 'assets/images/dingo.jpg',
+		"fact": 'A dingo is type of feral dog that originates from Southeast Asia and can now be found in parts of Australia.'
+	},
 
-// 	{ "word": 'sydney',
-// 		"picture": 'assets/images/sydney.jpg',
-// 		"fact": 'Sydney is home to well over 100 beaches.'
-// 	},
+	{ "word": 'sydney',
+		"picture": 'assets/images/sydney.jpg',
+		"fact": 'Sydney is home to well over 100 beaches.'
+	},
 
-// 	{ "word": 'perth',
-// 		"picture": 'assets/images/perth.jpg',
-// 		"fact": 'Perth is the capital of Western Australia.'
-// 	},
+	{ "word": 'perth',
+		"picture": 'assets/images/perth.jpg',
+		"fact": 'Perth is the capital of Western Australia.'
+	},
 
-// 	{ "word": 'tasmania',
-// 		"picture": 'assets/images/tasmania.jpg',
-// 		"fact": "Tasmania is home to the Overland Track, Australia's most famous hiking trail."
-// 	},
+	{ "word": 'tasmania',
+		"picture": 'assets/images/tasmania.jpg',
+		"fact": "Tasmania is home to the Overland Track, Australia's most famous hiking trail."
+	},
 
-// 	{ "word": 'platypus',
-// 		"picture": 'assets/images/platypus.jpg',
-// 		"fact": 'The platypus is such an unlikely animal that when scientists first discovered it they thought they were the victims of a hoax.'
-// 	},
+	{ "word": 'platypus',
+		"picture": 'assets/images/platypus.jpg',
+		"fact": 'The platypus is such an unlikely animal that when scientists first discovered it they thought they were the victims of a hoax.'
+	},
 
-// 	{ "word": 'freycinet',
-// 		"picture": 'assets/images/freycinet.jpg',
-// 		"fact": 'Freycinet National Park is home to Wineglass Bay which is consistently listed as one of the top 10 beaches in the World.'
-// 	},
+	{ "word": 'freycinet',
+		"picture": 'assets/images/freycinet.jpg',
+		"fact": 'Freycinet National Park is home to Wineglass Bay which is consistently listed as one of the top 10 beaches in the World.'
+	},
 
-// 	{ "word": 'outback',
-// 		"picture": 'assets/images/outback.jpg',
-// 		"fact": 'The Outback has an average maximum temperature in January of 104F'
-// 	},
+	{ "word": 'outback',
+		"picture": 'assets/images/outback.jpg',
+		"fact": 'The Outback has an average maximum temperature in January of 104F'
+	},
 
-// 	{ "word": 'boomerang',
-// 		"picture": 'assets/images/boomerang.jpg',
-// 		"fact": 'A boomerang was originally used as weapon by Indigenous Australians.'
-// 	},
+	{ "word": 'boomerang',
+		"picture": 'assets/images/boomerang.jpg',
+		"fact": 'A boomerang was originally used as weapon by Indigenous Australians.'
+	},
 
-// 	{ "word": 'wallaby',
-// 		"picture": 'assets/images/wallaby.jpg',
-// 		"fact": 'A wallaby is a member of the kanagroo family but they are generally much smaller than kangeroos.'
-// 	},
+	{ "word": 'wallaby',
+		"picture": 'assets/images/wallaby.jpg',
+		"fact": 'A wallaby is a member of the kanagroo family but they are generally much smaller than kangeroos.'
+	},
 
-// 	{ "word": 'cassowary', 
-// 		"picture": 'assets/images/cassowary.jpg',
-// 		"fact": 'he cassowary is extremely dangerous if provoked and can literally kick a person to death.'
-// 	},
+	{ "word": 'cassowary', 
+		"picture": 'assets/images/cassowary.jpg',
+		"fact": 'The cassowary is extremely dangerous if provoked and can literally kick a person to death.'
+	},
 
-// 	{ "word": 'canberra',
-// 		"picture": 'assets/images/canberra.jpg',
-// 		"fact": 'Canberra is the capital of Australia.'
-// 	},
-// ];
+	{ "word": 'canberra',
+		"picture": 'assets/images/canberra.jpg',
+		"fact": 'Canberra is the capital of Australia.'
+	},
+];
 
-var wordList = ["australia", "kangaroo", "uluru", "echidna", "wombat",
-"whitehaven", "koala", "quokka", "dingo", "sydney", "perth", "tasmania", "platypus",
-"freycinet", "outback", "boomerang", "wallaby", "cassowary", "canberra"];
+// var wordList = ["australia", "kangaroo", "uluru", "echidna", "wombat",
+// "whitehaven", "koala", "quokka", "dingo", "sydney", "perth", "tasmania", "platypus",
+// "freycinet", "outback", "boomerang", "wallaby", "cassowary", "canberra"];
 
-//Creates an array that lists all the picture options for the computer to choose from.
-var picList= ["assets/images/australiamap.jpg", "assets/images/kangaroos.jpg",
-"assets/images/Uluru.jpg", "assets/images/echidna.jpg", "assets/images/wombat.jpg",
-"assets/images/whitehavenbeach.jpg", "assets/images/koala.jpg", "assets/images/quokka.jpg",
-"assets/images/dingo.jpg", "assets/images/sydney.jpg", "assets/images/perth.jpg",
-"assets/images/tasmania.jpg", "assets/images/platypus.jpg", "assets/images/freycinet.jpg",
-"assets/images/outback.jpg", "assets/images/boomerang.jpg", "assets/images/wallaby.jpg",
-"assets/images/cassowary.jpg", "assets/images/canberra.jpg"];
+// //Creates an array that lists all the picture options for the computer to choose from.
+// var picList= ["assets/images/australiamap.jpg", "assets/images/kangaroos.jpg",
+// "assets/images/Uluru.jpg", "assets/images/echidna.jpg", "assets/images/wombat.jpg",
+// "assets/images/whitehavenbeach.jpg", "assets/images/koala.jpg", "assets/images/quokka.jpg",
+// "assets/images/dingo.jpg", "assets/images/sydney.jpg", "assets/images/perth.jpg",
+// "assets/images/tasmania.jpg", "assets/images/platypus.jpg", "assets/images/freycinet.jpg",
+// "assets/images/outback.jpg", "assets/images/boomerang.jpg", "assets/images/wallaby.jpg",
+// "assets/images/cassowary.jpg", "assets/images/canberra.jpg"];
 
-var factList= ["Australia was originally founded as a penal colony.",
-"Kangaroos can reach speeds of over 65 Kilometers per hour.",
-"Uluru, also known as Ayers Rock, stands 348 meters (1141.73 feet) above ground.",
-"Echidnas are one of only two egg laying mammals on Earth.",
-"Wombats have cube-shaped poop.", "Whitehaven Beach stretches over 7km and has pure white silica sand.",
-"Koalas will eat up to 2.5lbs of food a day and sleep for up to 20 hours a day.",
-"Quokkas are only found on Rottnest Island just off Western Australia's coast.",
-"A dingo is type of feral dog that originates from Southeast Asia and can now be found in parts of Australia.",
-"Sydney is home to well over 100 beaches.", "Perth is the capital of Western Australia.",
-"Tasmania is home to the Overland Track, Australia's most famous hiking trail.", 
-"The platypus is such an unlikely animal that when scientists first discovered it they thought they were the victims of a hoax.",
-"Freycinet National Park is home to Wineglass Bay which is consistently listed as one of the top 10 beaches in the World.",
-"The Outback has an average maximum temperature in January of 104F", 
-"A boomerang was originally used as weapon by Indigenous Australians.", 
-"A wallaby is a member of the kanagroo family but they are generally much smaller than kangeroos.", 
-"The cassowary is extremely dangerous if provoked and can literally kick a person to death.", 
-"Canberra is the capital of Australia."];
+// var factList= ["Australia was originally founded as a penal colony.",
+// "Kangaroos can reach speeds of over 65 Kilometers per hour.",
+// "Uluru, also known as Ayers Rock, stands 348 meters (1141.73 feet) above ground.",
+// "Echidnas are one of only two egg laying mammals on Earth.",
+// "Wombats have cube-shaped poop.", "Whitehaven Beach stretches over 7km and has pure white silica sand.",
+// "Koalas will eat up to 2.5lbs of food a day and sleep for up to 20 hours a day.",
+// "Quokkas are only found on Rottnest Island just off Western Australia's coast.",
+// "A dingo is type of feral dog that originates from Southeast Asia and can now be found in parts of Australia.",
+// "Sydney is home to well over 100 beaches.", "Perth is the capital of Western Australia.",
+// "Tasmania is home to the Overland Track, Australia's most famous hiking trail.", 
+// "The platypus is such an unlikely animal that when scientists first discovered it they thought they were the victims of a hoax.",
+// "Freycinet National Park is home to Wineglass Bay which is consistently listed as one of the top 10 beaches in the World.",
+// "The Outback has an average maximum temperature in January of 104F", 
+// "A boomerang was originally used as weapon by Indigenous Australians.", 
+// "A wallaby is a member of the kanagroo family but they are generally much smaller than kangeroos.", 
+// "The cassowary is extremely dangerous if provoked and can literally kick a person to death.", 
+// "Canberra is the capital of Australia."];
 
 
 //Solution will be held here
@@ -161,10 +161,11 @@ function startGame() {
 	numGuesses= 8;
 
 	//Solution is chosen
-	chosenWord = wordList[Math.floor(Math.random() * wordList.length)];
+	chosenWord = myList[Math.floor(Math.random() * myList.length)].word;
+
 
 	//Breaks solution word into individual letters
-	lettersInChosenWord = chosenWord.split("");
+	lettersInChosenWord = chosenWord.toString("");
 
 	//Counts the number of letters in the solution
 	numBlanks = lettersInChosenWord.length;
@@ -259,7 +260,7 @@ function roundComplete(){
 	document.getElementById("wrongGuess").innerHTML= wrongGuess.join(" ");
 
 	//If we have gotten all the letters to match the solution
-	if (lettersInChosenWord.toString() == blanksAndLetters.toString()){
+	if (lettersInChosenWord == blanksAndLetters.toString()){
 
 		//play sound
 		yay.play();
@@ -269,15 +270,15 @@ function roundComplete(){
 
 		//Change picture
 		//get index of chosenWord
-		var wordIndex = wordList.indexOf(chosenWord);
+		var wordIndex = myList.indexOf(chosenWord);
 		console.log(wordIndex);
 		
 		//set image src to index of picture corresponding to the chosen word
-		document.getElementById("rotatingimage").src= picList[wordIndex];
+		document.getElementById("rotatingimage").src= myList[wordIndex].picture;
 
 		//Show fun fact about chosenWord
 
-		document.getElementById("facts").innerHTML= factList[wordIndex];
+		document.getElementById("facts").innerHTML= myList[wordIndex].fact;
 
 		//update win count in HTML
 		document.getElementById("winCounter").innerHTML=winCounter;
