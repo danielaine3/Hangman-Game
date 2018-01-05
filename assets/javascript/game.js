@@ -315,7 +315,6 @@ document.onkeyup = function(event) {
 
 	//=== is where the issue is happening, only runs else part
 	if(/[a-z]/i.test(letterGuessed)
-		
 		) {
 
 		console.log(event.keyCode);
