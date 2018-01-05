@@ -315,18 +315,7 @@ document.onkeyup = function(event) {
 
 	//=== is where the issue is happening, only runs else part
 	if(/[a-z]/i.test(letterGuessed)
-
-		// String.fromCharCode(event.keyCode).toLowerCase() 
-
-		// "a" || letterGuessed === "b" || letterGuessed === "c" || 
-		// letterGuessed === "d" || letterGuessed === "e" || letterGuessed === "f" || 
-		// letterGuessed === "g" || letterGuessed === "h" || letterGuessed === "i" ||
-		// letterGuessed === "j" || letterGuessed === "k" || letterGuessed === "l" || 
-		// letterGuessed === "m" || letterGuessed === "n" || letterGuessed === "o" || 
-		// letterGuessed === "p" || letterGuessed === "q" || letterGuessed === "r" || 
-		// letterGuessed === "s" || letterGuessed === "t" || letterGuessed === "u" ||
-		// letterGuessed === "v" || letterGuessed === "w" || letterGuessed === "x" || 
-		// letterGuessed === "y" || letterGuessed === "z"
+		
 		) {
 
 		console.log(event.keyCode);
