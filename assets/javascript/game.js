@@ -163,7 +163,6 @@ function startGame() {
 	//Solution is chosen
 	chosenWord = myList[Math.floor(Math.random() * myList.length)].word;
 
-
 	//Breaks solution word into individual letters
 	lettersInChosenWord = chosenWord.toString("");
 
@@ -186,7 +185,7 @@ function startGame() {
 	//Print the initial blanks to console.
 	console.log(blanksAndLetters);
 
-	//Reprinte the Guesses Remaining to 10
+	//Reprint the Guesses Remaining to 8
 	document.getElementById("guessesLeft").innerHTML = numGuesses;
 
 	//Print the blanks at the beginning of each round in the HTML
@@ -260,7 +259,7 @@ function roundComplete(){
 	document.getElementById("wrongGuess").innerHTML= wrongGuess.join(" ");
 
 	//If we have gotten all the letters to match the solution
-	if (lettersInChosenWord == blanksAndLetters.toString()){
+	if (lettersInChosenWord == blanksAndLetters.join("")){
 
 		//play sound
 		yay.play();
@@ -268,17 +267,18 @@ function roundComplete(){
 		//Add to win count
 		winCounter++;
 
-		//Change picture
-		//get index of chosenWord
-		var wordIndex = myList.indexOf(chosenWord);
-		console.log(wordIndex);
+//Change picture
+//get index of chosenWord
+var wordIndex = 0;
+
+console.log(wordIndex);
 		
 		//set image src to index of picture corresponding to the chosen word
-		document.getElementById("rotatingimage").src= myList[wordIndex].picture;
+		document.getElementById("rotatingimage").src= myList[chosenWord].picture;
 
 		//Show fun fact about chosenWord
 
-		document.getElementById("facts").innerHTML= myList[wordIndex].fact;
+		document.getElementById("facts").innerHTML= myList[chosenWord].fact;
 
 		//update win count in HTML
 		document.getElementById("winCounter").innerHTML=winCounter;
