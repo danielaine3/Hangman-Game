@@ -151,9 +151,11 @@ var numGuesses = 8;
 //Sounds
 var boo = new Audio ("assets/sound/womp.mp3")
 var yay = new Audio ("assets/sound/ding.mp3")
+	
+//Generating random number to be used in selecting question, picture and fact
+var randomNumber = Math.floor(Math.random() * myList.length);
 
 //FUNCTIONS
-
 //startGame() function tells computer how to start/restart the game
 function startGame() {
 
@@ -161,7 +163,8 @@ function startGame() {
 	numGuesses= 8;
 
 	//Solution is chosen
-	chosenWord = myList[Math.floor(Math.random() * myList.length)].word;
+
+	chosenWord = myList[randomNumber].word;
 
 	//Breaks solution word into individual letters
 	lettersInChosenWord = chosenWord.toString("");
@@ -267,18 +270,18 @@ function roundComplete(){
 		//Add to win count
 		winCounter++;
 
-//Change picture
-//get index of chosenWord
-var wordIndex = 0;
+		//Change picture
+		//get index of chosenWord
+		// var wordIndex = myList.indexOf(chosenWord);
 
-console.log(wordIndex);
+		// console.log(wordIndex);
 		
 		//set image src to index of picture corresponding to the chosen word
-		document.getElementById("rotatingimage").src= myList[chosenWord].picture;
+		document.getElementById("rotatingimage").src= myList[randomNumber].picture;
 
 		//Show fun fact about chosenWord
 
-		document.getElementById("facts").innerHTML= myList[chosenWord].fact;
+		document.getElementById("facts").innerHTML= myList[randomNumber].fact;
 
 		//update win count in HTML
 		document.getElementById("winCounter").innerHTML=winCounter;
