@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <!--Required meta tags-->
+    <meta charset= "UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title> 
+      Hangman | Australia Edition
+    </title>
+
+    <!--Link to reset CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+	<!--Link to Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Yellowtail" rel="stylesheet">
+
+    <!--Link to Bootstrap stylesheet-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!--Link to CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+      
+  </head>
+
+<body>
+
+		<!--Header-->
+
+		<div class="jumbotron">
+
+			<h1 class="header">Hangman</h1>
+
+			<h3 class="subheader">Australia Edition</h3>
+
+		</div>
+
+		<!--Main Content-->
+
+		<div class="container">
+
+			<div class="row center-content-between">
+
+				<div class= "col-lg-6 image-container">
+
+					<img id="rotatingimage" src="assets/images/SydneyHarbour.png" alt="Australia Related Picture">
+
+					<div id="facts"></div>
+
+				</div>
+
+				<div class ="col-lg-6"> 
+	
+					<p>Press any letter to get started!</p>
+
+					<div class="container">
+
+						<div class="wins">
+
+							<p>Wins:
+
+							<span id="winCounter">0</span>
+
+							</p>
+
+						</div>
+
+						<br>
+
+						<div class="currentword">
+
+							<p>Current Word:
+
+							<br>
+
+							<span id="wordblanks">_ _ _</span>
+
+							</p>
+
+						</div>
+
+						<br>
+
+						<div class="guesses-remaining">
+
+							<p>
+
+								Number of guesses remaining:
+
+								<span id="guessesLeft">10</span>
+
+							</p>
+
+						</div>
+
+						<br>
+
+						<div class="wrong-guesses">
+
+							<p>
+								Wrong Guesses:
+
+							<span id="wrongGuess"> </span>
+
+							</p>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	<footer>
+
+		 &copy; Copyright 2017 Dani Carter
+
+	</footer>
+
+	<!--Link to Javascript-->
+	<script src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>
