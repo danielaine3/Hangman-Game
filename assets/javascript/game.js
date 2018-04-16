@@ -92,12 +92,15 @@ var winCounter = 0;
 var numGuesses = 8;
 //Sounds
 var boo = new Audio ("assets/sound/womp.mp3")
-var yay = new Audio ("assets/sound/ding.mp3")	
-//Generating random number to be used in selecting question, picture and fact
-var randomNumber = Math.floor(Math.random() * myList.length);
+var yay = new Audio ("assets/sound/ding.mp3")
+//Random number set to blank
+var randomNumber = "";	
+
 //FUNCTIONS
 //startGame() function tells computer how to start/restart the game
 function startGame() {
+//Generating random number to be used in selecting question, picture and fact
+	randomNumber = Math.floor(Math.random() * myList.length);	
 	//Resets guess remaining at beginning of game
 	numGuesses= 8;
 	//Solution is chosen
